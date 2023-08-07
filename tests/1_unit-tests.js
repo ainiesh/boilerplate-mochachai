@@ -10,21 +10,21 @@ suite('Unit Tests', function () {
     });
     // #2
     test('#isDefined, #isUndefined', function () {
-      assert.fail(null, 'null is not undefined');
-      assert.fail(undefined, 'undefined IS undefined');
-      assert.fail('hello', 'A string is not undefined');
+      assert.isNull(null, 'null is not undefined');
+      assert.isNotNull(undefined, 'undefined IS undefined');
+      assert.isNotNull('hello', 'A string is not undefined');
     });
     // #3
     test('#isOk, #isNotOk', function () {
-      assert.fail(null, 'null is falsey');
-      assert.fail("I'm truthy", 'A string is truthy');
-      assert.fail(true, 'true is truthy');
+      assert.isNull(null, 'null is falsey');
+      assert.isNotNull("I'm truthy", 'A string is truthy');
+      assert.isNotNull(true, 'true is truthy');
     });
     // #4
     test('#isTrue, #isNotTrue', function () {
-      assert.fail(true, 'true is true');
-      assert.fail(!!'double negation', 'Double negation of a truthy value is true');
-      assert.fail({ value: 'truthy' }, 'Objects are truthy, but are not boolean values');
+      assert.isNotNull(true, 'true is true');
+      assert.isNotNull(!!'double negation', 'Double negation of a truthy value is true');
+      assert.isNotNull({ value: 'truthy' }, 'Objects are truthy, but are not boolean values');
     });
   });
 
