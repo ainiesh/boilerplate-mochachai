@@ -16,14 +16,14 @@ suite('Unit Tests', function () {
     });
     // #3
     test('#isOk, #isNotOk', function () {
-      assert.isNotNull(null, 'null is falsey');
+      assert.isNull(null, 'null is falsey');
       assert.isNull("I'm truthy", 'A string is truthy');
       assert.isNotNull(true, 'true is truthy');
     });
     // #4
     test('#isTrue, #isNotTrue', function () {
-      assert.isNull(true, 'true is true');
-      assert.isNull(!!'double negation', 'Double negation of a truthy value is true');
+      assert.isNotNull(true, 'true is true');
+      assert.isNotNull(!!'double negation', 'Double negation of a truthy value is true');
       assert.isNull({ value: 'truthy' }, 'Objects are truthy, but are not boolean values');
     });
   });
